@@ -70,6 +70,7 @@ display.repaint();
 Debugging
 -------
 To get some more debug information you can set log level to trace:
+
 `-Dorg.slf4j.simpleLogger.defaultLogLevel=trace`
 
 
