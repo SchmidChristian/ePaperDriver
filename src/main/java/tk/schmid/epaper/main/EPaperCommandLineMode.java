@@ -68,7 +68,6 @@ public class EPaperCommandLineMode {
 		display.connect();
 
 		for (int i = 0; i < parsedCommands.getOptions().length; i++) {
-
 			Option currentCommand = parsedCommands.getOptions()[i];
 			boolean isFilled = i > 0 && parsedCommands.getOptions()[i - 1].equals(fill);
 
@@ -118,7 +117,7 @@ public class EPaperCommandLineMode {
 			}
 			if (currentCommand.equals(importFont)) {
 				String fontName = currentCommand.getValue(0);
-				display.importFont(fontName);
+				display.importFont(fontName	);
 			}
 			if (currentCommand.equals(importImage)) {
 				String filename = currentCommand.getValue(0);
@@ -135,6 +134,7 @@ public class EPaperCommandLineMode {
 				display.setEnglishFontSize(fontSizeToSet);
 			}
 		}
+		System.exit(0);
 	}
 
 	private static int[] castArgsToInt(String[] args) {
