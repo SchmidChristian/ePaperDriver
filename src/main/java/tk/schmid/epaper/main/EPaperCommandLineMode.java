@@ -32,7 +32,7 @@ public class EPaperCommandLineMode {
 	private static Option drawTriangle = Option.builder("tri").longOpt("drawTriangle").numberOfArgs(6).argName("x0 y0 x1 y1 x2 y2").desc("draws a triangle").build();
 
 	private static Option displayText = Option.builder("t").longOpt("displayText").numberOfArgs(3).argName("x y text").desc("displays given text. (Max. 1020 chars)").build();
-	private static Option displayImage = Option.builder("i").longOpt("displayImage").numberOfArgs(1).argName("imageFileName").desc("displays an image").build();
+	private static Option displayImage = Option.builder("i").longOpt("displayImage").numberOfArgs(3).argName("imageFileName").desc("displays an image").build();
 
 	private static Option importFont = Option.builder("if").longOpt("importFont").numberOfArgs(1).argName("fontFileName").desc("imports a font to the internal memory from card").build();
 	private static Option importImage = Option.builder("ii").longOpt("importImage").numberOfArgs(2).argName("imageFileName").desc("imports a image to the internal memory from card").build();
@@ -110,12 +110,19 @@ public class EPaperCommandLineMode {
 
 			}
 			if (currentCommand.equals(displayImage)) {
+				int x = Integer.parseInt(currentCommand.getValue(0));
+				int y = Integer.parseInt(currentCommand.getValue(1));
+				String filename = currentCommand.getValue(2);
+				display.displayImage(x, y, filename);
 
 			}
 			if (currentCommand.equals(importFont)) {
-
+				String fontName = currentCommand.getValue(0);
+				display.importFont(fontName);
 			}
 			if (currentCommand.equals(importImage)) {
+				String filename = currentCommand.getValue(0);
+				display.importImage(filename);
 
 			}
 			if (currentCommand.equals(setDisplayDirection)) {

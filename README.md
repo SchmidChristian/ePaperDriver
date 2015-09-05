@@ -1,5 +1,5 @@
 ePaperDriver
-===================
+============
 An easy to use java driver for ePaper / eInk displays with serial interface.
 Driver can be used within java applications or in stand alone mode.
 
@@ -7,7 +7,7 @@ The driver is known to work with the following devices so far:
  * Waveshare 4.3 inch e-Paper display
 
 Prerequisites
-----------------
+-------------
 Serial communication with the display device is handled by the RXTX library.
 For the driver to work, RXTX has to be installed on your system.
 
@@ -18,7 +18,7 @@ Installation instructions can be found e.g. here:
 	 - `sudo apt-get install librxtx-java` 
 
 Usage as library in java application
--------------------
+------------------------------------
 
  - Include the jar file to your java application. 
  - Obtain a `SerialEPaperDisplay`instance
@@ -33,7 +33,7 @@ display.repaint();
 ```
 
 Usage in standalone mode
--------------------
+------------------------
 Most of the commands are also available using a command line interface:
 *Example:*
 ```
@@ -43,7 +43,7 @@ java -jar epaperdriver.jar --device COM5 --fill --drawCircle 200 300 125 --refre
 *To see full list of options use `--help`
 
 Preview
--------------------
+-------
 
 ![Example written on waveshare e-Paper display](display.jpg)
 
@@ -66,6 +66,12 @@ display.drawCircle(410, 160, 50, true);
 
 display.repaint();
 ```
+
+Debugging
+-------
+To get some more debug information you can set log level to trace:
+`-Dorg.slf4j.simpleLogger.defaultLogLevel=trace`
+
 
 Questions / answers
 -------------------
