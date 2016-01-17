@@ -37,8 +37,8 @@ public class EPaperCommandLineMode {
 	private static Option importFont = Option.builder("if").longOpt("importFont").numberOfArgs(1).argName("fontFileName").desc("imports a font to the internal memory from card").build();
 	private static Option importImage = Option.builder("ii").longOpt("importImage").numberOfArgs(2).argName("imageFileName").desc("imports a image to the internal memory from card").build();
 
-	private static Option setDisplayDirection = Option.builder("sd").longOpt("setDisplayDirection").numberOfArgs(1).argName("Normal|Rotated").desc("draws a line between given coordinates").build();
-	private static Option setFontSize = Option.builder("sf").longOpt("setFonzSize").numberOfArgs(1).argName("DotMatrix_32|DotMatrix_48|DotMatrix_64").desc("draws a line between given coordinates").build();
+	private static Option setDisplayDirection = Option.builder("sd").longOpt("setDisplayDirection").numberOfArgs(1).argName("Normal|Rotated").desc("sets the display direction").build();
+	private static Option setFontSize = Option.builder("sf").longOpt("setFonzSize").numberOfArgs(1).argName("DotMatrix_32|DotMatrix_48|DotMatrix_64").desc("sets the font size").build();
 
 	public static Options buildCliOptions() {
 		Options options = new Options();

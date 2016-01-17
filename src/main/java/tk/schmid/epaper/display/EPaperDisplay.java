@@ -56,5 +56,5 @@ public interface EPaperDisplay {
 	public int getBaudRate();
 	
 	public void setBaudRate(int baudRate);
-
+	
 }

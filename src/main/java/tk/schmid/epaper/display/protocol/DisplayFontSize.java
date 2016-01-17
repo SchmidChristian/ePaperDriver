@@ -3,16 +3,22 @@ package tk.schmid.epaper.display.protocol;
 import tk.schmid.epaper.display.serialcom.EPaperCommunicationException;
 
 public enum DisplayFontSize {
-	DotMatrix_32(0x00), DotMatrix_48(0x01), DotMatrix_64(0x02);
+	DotMatrix_32(32, 0x01), DotMatrix_48(48, 0x02), DotMatrix_64(64, 0x03);
 
-	private byte fontSize;
+	private byte fontSizeConstant;
+	private int pixelHeight; 
+	
+	DisplayFontSize(int pixelHeight, int fontSize) {
+		this.fontSizeConstant = (byte) fontSize;
+		this.pixelHeight = pixelHeight;
+	}
 
-	DisplayFontSize(int fontSize) {
-		this.fontSize = (byte) fontSize;
+	public int getFontPixelHeight() {
+		return this.pixelHeight;
 	}
 
 	public byte getDisplayFontSizeConstant() {
-		return this.fontSize;
+		return this.fontSizeConstant;
 	}
 
 	public static DisplayFontSize mapDeviceResponseToEnum(byte deviceResponse) {
