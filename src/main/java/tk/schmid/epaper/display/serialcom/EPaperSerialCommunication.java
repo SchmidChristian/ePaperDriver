@@ -16,6 +16,7 @@ public class EPaperSerialCommunication {
 
 	private static final Logger log = LoggerFactory.getLogger(EPaperSerialCommunication.class);
 
+	private static final int RESPONSE_POLLING_INTERVALL_IN_MS = 10;
 	private static final int COMMAND_TIMEOUT_IN_MS = 5000;
 	private static final int BAUDRATE = 115200;
 
@@ -75,16 +76,14 @@ public class EPaperSerialCommunication {
 		try {
 			long startTime = System.currentTimeMillis();
 
-			do {
-				Thread.sleep(10);
+			while (port.getInputBufferBytesCount() == 0) {
+				Thread.sleep(RESPONSE_POLLING_INTERVALL_IN_MS);
 				long currentTime = System.currentTimeMillis();
 
 				if (currentTime - startTime > COMMAND_TIMEOUT_IN_MS) {
 					throw new EPaperCommunicationException("Timeout waiting for answer from display.");
 				}
-			} while (port.getInputBufferBytesCount() == 0);
-
-			
+			} 
 			return port.readBytes();
 		} catch (InterruptedException e) {
 			throw new EPaperCommunicationException("Exception during waiting for answer from display.", e);
