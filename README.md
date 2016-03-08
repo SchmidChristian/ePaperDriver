@@ -8,14 +8,8 @@ The driver is known to work with the following devices so far:
 
 Prerequisites
 -------------
-Serial communication with the display device is handled by the RXTX library.
-For the driver to work, RXTX has to be installed on your system.
-
-Installation instructions can be found e.g. here:
-
- - Windows: http://fizzed.com/oss/rxtx-for-java
- - On linux e.g. raspberry pi it should be available by package manager:
-	 - `sudo apt-get install librxtx-java` 
+Serial communication with the display device is handled by the jssc library.
+If you use the library as maven artifact, the dependency will be installed automatically.
 
 Usage as library in java application
 ------------------------------------
