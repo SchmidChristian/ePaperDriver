@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>schmid.tk.epaper</groupId>
 	<artifactId>epaperdriver</artifactId>
-	<version>1.0.3</version>
+	<version>1.0.4-SNAPSHOT</version>
 	<name>ePaper Display Driver</name>
 
 	<properties>
@@ -13,8 +13,7 @@
 		<developerConnection>scm:git:https://github.com/SchmidChristian/ePaperDriver.git</developerConnection>
 		<connection>scm:git:https://github.com/SchmidChristian/ePaperDriver.git</connection>
 		<url>scm:git:https://github.com/SchmidChristian/ePaperDriver.git</url>
-	  <tag>epaperdriver-1.0.4</tag>
-  </scm>
+    </scm>
 
 	<build>
 		<plugins>
