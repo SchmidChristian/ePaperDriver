@@ -162,8 +162,11 @@ public class SerialEPaperDisplay implements EPaperDisplay {
 		return DisplayStorage.mapDeviceResponseToEnum(Byte.parseByte(new String(response)));
 	}
 
-	public void setActiveStorage(DisplayStorage storage) {
-	}
+	public void setActiveStorage(final DisplayStorage STORAGE) {
+		   byte[] storageParameter = new byte[] { STORAGE.getDisplayStorageConstant() };
+		       communication.sendCommand(DisplayCommand.Set_Selected_Storage_Area, storageParameter);
+		}
+
 
 	private byte[] encodeStringForDevice(String text) {
 		byte[] textBytes = text.getBytes(StandardCharsets.US_ASCII);
