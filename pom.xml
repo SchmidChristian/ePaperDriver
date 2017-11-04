@@ -2,12 +2,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>schmid.tk.epaper</groupId>
 	<artifactId>epaperdriver</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<name>ePaper Display Driver</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+	<scm>
+		<developerConnection>scm:git:https://github.com/SchmidChristian/ePaperDriver.git</developerConnection>
+		<connection>scm:git:https://github.com/SchmidChristian/ePaperDriver.git</connection>
+		<url>scm:git:https://github.com/SchmidChristian/ePaperDriver.git</url>
+	  <tag>epaperdriver-1.0.4</tag>
+  </scm>
 
 	<build>
 		<plugins>
@@ -52,6 +59,11 @@
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
 			</plugin>
 		</plugins>
 	</build>
